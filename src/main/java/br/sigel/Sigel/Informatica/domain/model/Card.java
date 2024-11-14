@@ -11,12 +11,12 @@ import java.math.BigDecimal;
 @Entity
 public class Card {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     private String number;
     
-   @Column(name = "addicional_limit", scale = 13, precision = 2)
+   @Column(name = "avaliable_limit", scale = 2, precision = 13)
     private BigDecimal limit;
 
     public Card() {

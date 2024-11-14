@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package br.sigel.Sigel.Informatica.domain.model;
 
 import jakarta.persistence.Column;
@@ -14,7 +11,7 @@ import java.math.BigDecimal;
 @Entity
 public class Account {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Column(unique = true)
@@ -22,10 +19,10 @@ public class Account {
      
     private String agency;
     
-    @Column(scale = 13, precision = 2)
+    @Column(scale = 2, precision = 13)
     private BigDecimal balance;
      
-    @Column(name = "addicional_limit", scale = 13, precision = 2) 
+    @Column(name = "addicional_limit", scale = 2, precision = 13) 
     private BigDecimal limit;
 
     public Account() {
@@ -70,6 +67,4 @@ public class Account {
     public void setLimit(BigDecimal limit) {
         this.limit = limit;
     }
-    
-
 }
